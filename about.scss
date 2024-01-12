@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@600;700&display=swap');
+
+
+$primary-green :  #014E56;
+$primary-pink : #F67E7E;
+$secondary-dark-green : #012F34;
+$secondary-green : #004047;
+$secondary-blue : #79C8C7;
+$police-blue : #2C6269 ;
+$footer-green : #002529;
+$font-name : Livvic;
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin font($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    
+
+    main {
+
+        .name{
+            color: $secondary-blue;
+            font-weight: bold;
+        }
+
+        .avatar__two {
+                @include size(96px, 96px);
+                border-radius: 50%;
+                border: 2px solid $secondary-blue;
+                margin: 10px;
+    
+            }
+        
+
+        section {
+            padding: 20px 24px;    
+        }
+
+        #first {
+            background-image: url(assets/bg-pattern-about-1-mobile-nav-1.svg);
+            background-repeat: no-repeat;
+            background-position: bottom -6rem right -6rem;
+        }
+
+
+        section:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10% 10% 15% 10%;
+
+            h1 {
+                font-size: 4em;
+            }
+
+
+            span {
+                color: $primary-pink;
+            }
+
+            p, h1 {
+                margin: 0 0 30px 0;
+            }
+
+        
+           
+        }
+
+        #directors {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-image: url(assets/bg-pattern-about-2-contact-1.svg),url(assets/bg-pattern-home-4-about-3.svg) ;
+            background-repeat: no-repeat, no-repeat;
+            background-position: top -100px left -100px, bottom right;
+            background-color: $secondary-green;
+            padding: 10%;
+
+            h2 {
+                margin: 50px 0 0 0;
+            }
+
+            ul {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+
+                li {
+                    margin: 30px;
+                    width: 400px;
+                    .do {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 20px;
+                        height: 250px;
+                        background-color: $secondary-dark-green;
+
+                    }
+
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: none;
+                        border-radius: 50%;
+                        height: 45px;
+                        width: 45px;
+                        padding: 30px;
+                        transform: translate(0 ,45px);
+                    }
+
+                    .director button {
+                        background-color: $primary-pink
+                    }
+
+                    .citation {
+                        text-align: center;
+                        padding: 30px;
+
+                        p {
+                            width: 60%;
+                            margin: 10px;
+                        }
+
+                        button {
+                            background-color: $secondary-blue;
+    
+                            img {
+                                transform: rotate(45deg);
+                            }
+                        }
+    
+                    }
+
+                    
+                    .dont {
+                        display: none;
+                    }
+
+                   
+                }
+            }
+
+           
+           
+        }
+
+        #clients {
+            background-image: url(assets/bg-pattern-home-3.svg);
+            background-repeat: no-repeat;
+            background-position: top -120px left -120px ;
+            background-color: $secondary-dark-green;
+            padding: 7%;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 30px;
+                margin: 20px 0 0 0 ;
+                li {
+                    width: 80%;
+    
+                    img {
+                        height: 20px;
+                    }
+                }
+            }
+            
+           
+        }
+
+
+      
+    }
+
+       
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+    
+            #burger {
+                display: none;
+            }
+    
+           
+            #menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                background: none;
+    
+                #close {
+                    display: none;
+                }
+    
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 50px;
+                    margin: 0;
+                }
+        
+               
+                button {
+                    padding: 0 10px;
+                    height: 40px;
+                }
+                
+            }
+        }
+    
+        main {
+    
+            #first {
+                background-image: url(assets/bg-pattern-about-1-mobile-nav-1.svg);
+                background-repeat: no-repeat;
+                background-position: bottom right -6rem;
+            }
+    
+    
+            #start {
+                display: flex;
+                flex-direction: row;
+            }
+    
+            #clients {
+                ul {
+                   flex-direction: row;
+                   padding: 10px;
+                }
+                
+            }
+    
+            
+    
+        }
+    }
+
+   
+    
+}
+
+
+@media screen and (min-width: 1100px) {
+    main {
+
+        #first {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            
+            p, h1 {
+                text-align: left;
+            }
+
+            h1 {
+                width: 40%;
+            }
+
+            p {
+                width: 40%;
+            }
+        }
+
+
+    }
+}
